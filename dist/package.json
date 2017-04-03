@@ -1,0 +1,10 @@
+{
+  "name": "creative-lang",
+  "version": "1.0.0",
+  "description": "A website build on VueJS + webpack template",
+  "author": "Cuong",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm install express"
+  }
+}
