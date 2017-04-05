@@ -24,7 +24,7 @@ export default {
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 5px 0;
+    margin: 1rem 0 0 0;
   }
   .tag {
     height: 20px;

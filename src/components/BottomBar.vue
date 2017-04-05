@@ -31,7 +31,7 @@ export default {
   methods: {
     filterBy: function (tagName) {
       // console.log(Vue)
-      this.$parent.$emit('test', tagName)
+      this.$parent.$emit('changeTagName', tagName)
     }
   }
 }

@@ -27,6 +27,7 @@ export default {
     font-family: OAF;
     src: url("./assets/OAF.otf");
   }
+
   html,body {
     margin:0;
     padding:0;
@@ -35,7 +36,7 @@ export default {
     -webkit-user-select: none; /* Chrome/Safari */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+ */
-    font-family: "Comic Sans MS";
+    // font-family: "Comic Sans MS";
     /* Rules below not implemented in browsers yet */
     -o-user-select: none;
     user-select: none;

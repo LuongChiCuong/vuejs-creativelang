@@ -1,18 +1,22 @@
 <template>
   <div class="url-container">
+    <p class="count-item">Viewing total {{bookmarks.length}} bookmarks</p>
     <div class="row">
-      <ul>
+      <ul class="list-item">
         <li class="col s12 m3 l2 item-content" v-for="bm in filteredBookmarks(bookmarks)">
-          <div class="card-icon">
-            <img :src="'https://www.google.com/s2/favicons?domain=' + bm.url" class="favicon">
-          </div>
           <div class="card-content">
-            <b class="title">{{ bm.title }}</b>
-            <br/>
+            <!-- <div class="card-icon">
+              <img :src="'https://www.google.com/s2/favicons?domain=' + bm.url" class="favicon">
+            </div> -->
+            <div class="title">
+              <img :src="'https://www.google.com/s2/favicons?domain=' + bm.url" class="favicon">
+              <a :href="bm.url"  target="_blank">{{ bm.title }}</a>
+            </div>
+            <tags :tagValue="bm.tags"></tags>
             <!-- <i class="url-text">{{ bm.url }}</i> -->
             <p class="description">{{ bm.description }}</p>
-            <tags :tagValue="bm.tags"></tags>
-            <a :href="bm.url" target="_blank">Open in new tab</a>
+
+            <!-- <a :href="bm.url" target="_blank">Open in new tab</a> -->
           </div>
         </li>
       </ul>
@@ -45,7 +49,7 @@ export default {
   //   }
   // },
   created: function () {
-    this.$parent.$on('test', this.filterBy)
+    this.$parent.$on('changeTagName', this.filterBy)
   },
   methods: {
     loadBookmarks: function () {
@@ -53,6 +57,7 @@ export default {
       // var api = 'http://localhost:3000/bookmarks'
       this.$http.get(api).then((res) => {
         this.bookmarks = res.body
+        this.curBmLength = this.bookmarks.length
       }, (err) => {
         console.log(err)
       })
@@ -83,27 +88,65 @@ export default {
 </script>
 
 <style lang="less">
+  @teal-color : #64ffda;
   .url-container {
-    padding: 20px;
-    .item-content {
+    padding: 0 20px 20px 20px;
+    .count-item{
+      margin: 30px 0 30px 10px;
+    }
+    .list-item {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
-      min-height: 250px;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+      .item-content {
+        margin: 0;
+        // min-height: 250px;
+      }
     }
   }
   // separate to make searchResult inherit style
   .card-icon {
     position: absolute;
     .favicon {
-      width: 30px;
-      height: 30px;
+      width: 20px;
+      height: 20px;
     }
   }
   .card-content {
-    margin-left: 40px;
-    b{
-      font-size: 16px;
-      line-height: 18px;
+    margin-right: 30px;
+    border-top: 1px solid #333;
+    .title {
+      margin-top: 1rem;
+      a {
+        margin-left: 5px;
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: bold;
+        color: #333;
+        display: inline-block;
+        &:before {
+          content: '';
+          height: 2px;
+          width: 0;
+          background-color: @teal-color;
+          display: block;
+          position: relative;
+          top: 10px;
+        }
+        &:hover {
+          &:before {
+            width: 100%;
+            transition: width ease-in-out 0.5s;
+          }
+        }
+      }
+
     }
     .url-text {
       width: 100%;
@@ -112,7 +155,7 @@ export default {
       text-overflow: ellipsis;
     }
     .description {
-      min-height: 100px;
+      // min-height: 100px;
     }
   }
 
