@@ -2,9 +2,15 @@
   <div class="video-bg-container">
     <div class="video-content">
       <div class="inner-content">
-        <h2>Fullscreen HTML5 Background Video</h2>
+        <img src="../assets/logo-icon-new.png" alt="Creative Lang Icon"/>
+        <h2>Creative Lang</h2>
         <p>
-          Utilizes Javascript to create cover effect and updates on resize. Modernizr determines an image fallback for touch devices.
+          Stop coding like a worker!
+        </p>
+        <p>
+          This website is a collection of bookmark and e-book about Front End Web Development.
+          <br/>
+          Let's learn and work with your creative.
         </p>
         <router-link :to="{ name: 'list'}" class="btn-explore">
           <span class="row1">Explore Now</span>
@@ -62,15 +68,16 @@ export default {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+    font-family: Orbitron;
   }
 
   .inner-content h2 {
     max-width: 40em;
-    font-size: 28px;
+    font-size: 5rem;
     font-weight: 700;
     color: #fff;
-    font-family: 'Raleway', sans-serif;
-    line-height: 1.3;
+    font-family: Orbitron;
+    line-height: 5rem;
     margin: 0 auto;
   }
 
@@ -79,6 +86,7 @@ export default {
     max-width: 40em;
     margin: 0 auto;
     color: white;
+    letter-spacing: 4px;
   }
 
   a.btn-explore {

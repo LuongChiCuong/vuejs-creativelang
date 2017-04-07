@@ -6,7 +6,7 @@
           <!-- <a href="#!" class="brand-logo center black-text" :class="{active: activeMenu}">{{logo}}</a> -->
           <router-link class="brand-logo center black-text" :to="{ name: 'app'}"
             :class="{active: activeMenu}">
-            CreativeLang
+            Creative Lang
           </router-link>
           <!-- <div class="skew-bg"></div> -->
           <div v-on:click="toggleMenu" class="menu left" :class="{active: activeMenu}">
@@ -116,11 +116,8 @@ export default {
     /*logo style*/
     .brand-logo {
       z-index: 22;
-      // font-family: Bellico;
-      font-family: OAF;
-      font-size: 3rem;
-      letter-spacing: 5px;
-      margin-top: -5px;
+      font-family: Orbitron;
+      font-size: 2.5rem;
     }
     .brand-logo.active{
       color: #64ffda !important;

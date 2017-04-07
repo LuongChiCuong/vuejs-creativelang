@@ -58,6 +58,7 @@
   }
   .banner .get-in-touch {
     font-size: 3rem;
+    font-family: Orbitron;
     position: relative;
     left: 50%;
     transform: translateX(-50%);

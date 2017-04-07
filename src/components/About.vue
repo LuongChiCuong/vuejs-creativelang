@@ -24,7 +24,7 @@
               My name is Cuong, with a special passion for <mark><b>Front End Developer</b></mark>.</br>
               I created this website with the purpose of sharing my knowledge and passion for everyone.</br>
               My target is to become a <mark><b>creative front end</b></mark>, why? Because I want to directly develop ideas with <mark>my creativity</mark>,
-              I do not want to be limited in thinking and only following designers or marketing.</br>
+              I do not want to be limited in thinking and only following the design and marketing teams.</br>
               If you also like <mark>Front End</mark>, we will prove to the fucking developers who think FE is simple and easy that <mark><b>FE is an art</b></mark>.
           </p>
           <div class="resume">
@@ -63,11 +63,13 @@
         width: 100%;
         text-align: center;
         .inner-content {
+          font-family: Orbitron;
           h1{
             font-size: 2rem;
           }
           h2{
             font-size: 2.5rem;
+            letter-spacing: 5px;
           }
         }
 

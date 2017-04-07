@@ -24,8 +24,8 @@ export default {
   //   src: url("./assets/Bellico.ttf");
   // }
   @font-face {
-    font-family: OAF;
-    src: url("./assets/OAF.otf");
+    font-family: Orbitron;
+    src: url("./assets/Orbitron-Regular.ttf");
   }
 
   html,body {
@@ -36,13 +36,11 @@ export default {
     -webkit-user-select: none; /* Chrome/Safari */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+ */
-    // font-family: "Comic Sans MS";
     /* Rules below not implemented in browsers yet */
     -o-user-select: none;
     user-select: none;
     #app {
       // font-family: 'Avenir', Helvetica, Arial, sans-serif;
-      font-family: "Comic Sans MS";
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       text-align: center;
