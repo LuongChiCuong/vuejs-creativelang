@@ -26,20 +26,22 @@
         </div>
       </div>
     </div>
-    <div id="map">
+    <!-- <div id="map">
       <img src="../assets/map.png" alt="Google Map Capture" />
     </div>
     <div class="made-by center-align white">
       <p>Made with <b class="heart">&#10084;</b> by luongchicuong93@gmail.com - Powered by VueJS - NodeJS - MongoDB</p>
-    </div>
+    </div> -->
+    <FooterSection></footerSection>
 </div>
 </template>
 <script>
   import Navigation from './Navigation'
+  import FooterSection from './FooterSection'
   export default {
     name: 'Contact',
     components: {
-      Navigation
+      Navigation, FooterSection
     }
   }
 </script>
@@ -87,7 +89,7 @@
   }
 
   .contact-section {
-    padding: 70px;
+    padding: 70px 0; 
   }
   .contact-section h3 {
     font-size: 2.0rem;
@@ -116,10 +118,10 @@
     width: 100%;
     margin-top: 30px;
   }
-
+/*
   #map {
     width: 100%;
     height: 400px;
     background-color: grey;
-  }
+  }*/
 </style>

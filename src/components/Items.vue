@@ -2,24 +2,27 @@
   <div class="url-container">
     <p class="count-item">Viewing total {{bookmarks.length}} bookmarks</p>
     <div class="row">
-      <ul class="list-item">
-        <li class="col s12 m3 l2 item-content" v-for="bm in filteredBookmarks(bookmarks)">
-          <div class="card-content">
-            <!-- <div class="card-icon">
-              <img :src="'https://www.google.com/s2/favicons?domain=' + bm.url" class="favicon">
-            </div> -->
-            <div class="title">
-              <img :src="'https://www.google.com/s2/favicons?domain=' + bm.url" class="favicon">
-              <a :href="bm.url"  target="_blank">{{ bm.title }}</a>
-            </div>
-            <tags :tagValue="bm.tags"></tags>
-            <!-- <i class="url-text">{{ bm.url }}</i> -->
-            <p class="description">{{ bm.description }}</p>
+        <transition-group name="list" tag="ul" class="list-item">
+          <li v-for="(bm, index) in filteredBookmarks(bookmarks)"
+            :key="bm"
+            v-bind:data-index="index"
+            class="col s12 m3 l2 item-content">
+            <div class="card-content">
 
-            <!-- <a :href="bm.url" target="_blank">Open in new tab</a> -->
-          </div>
-        </li>
-      </ul>
+              <!-- <div class="card-icon">
+                <img :src="'https://www.google.com/s2/favicons?domain=' + bm.url" class="favicon">
+              </div> -->
+              <div class="title">
+                <img :src="'https://www.google.com/s2/favicons?domain=' + bm.url" v-bind:key="bm" class="favicon">
+                <a :href="bm.url"  target="_blank">{{ bm.title }}</a>
+              </div>
+              <tags :tagValue="bm.tags"></tags>
+              <p class="description">{{ bm.description }}</p>
+              <!-- <i class="url-text">{{ bm.url }}</i> -->
+              <!-- <a :href="bm.url" target="_blank">Open in new tab</a> -->
+            </div>
+          </li>
+        <transition-group>
     </div>
   </div>
 </template>
@@ -27,6 +30,7 @@
 <script>
 import Tags from './Tags'
 // var _ = require('lodash')
+// var Velocity = require('velocity-animate')
 
 export default {
   name: 'items',
@@ -52,6 +56,30 @@ export default {
     this.$parent.$on('changeTagName', this.filterBy)
   },
   methods: {
+    // beforeEnter: function (el) {
+    //   el.style.opacity = 0
+    //   // el.style.height = 0
+    // },
+    // enter: function (el, done) {
+    //   var delay = el.dataset.index * 150
+    //   setTimeout(function () {
+    //     Velocity(
+    //       el,
+    //       { opacity: 1 },
+    //       { complete: done }
+    //     )
+    //   }, delay)
+    // },
+    // leave: function (el, done) {
+    //   var delay = el.dataset.index * 150
+    //   setTimeout(function () {
+    //     Velocity(
+    //       el,
+    //       { opacity: 0, position: 'absolute', top: '0px' },
+    //       { complete: done }
+    //     )
+    //   }, delay)
+    // },
     loadBookmarks: function () {
       var api = 'http://creativelang-97156.app.xervo.io/bookmarks'
       // var api = 'http://localhost:3000/bookmarks'
@@ -106,7 +134,14 @@ export default {
       flex-wrap: wrap;
       .item-content {
         margin: 0;
-        // min-height: 250px;
+      }
+      .list-enter-active, .list-leave-active {
+        transition: all ease-in-out 1s;
+      }
+      .list-enter, .list-leave-to /* .list-leave-active for <2.1.8 */ {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+        // transform: translateY(30px);
       }
     }
   }

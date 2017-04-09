@@ -1,217 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Lang</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Creative Lang - A good collection of bookmarks and ebooks about creative front end develoment.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Front End Development Language - Creative Lang">
+    <meta property="og:description" content="Creative Lang - A good collection of bookmarks and ebooks about creative front end develoment.">
+    <meta property="og:image" content="./static/logo-meta.png">
+    <meta name="theme-color" content="#000000">
+    <!-- <link rel="icon" href="http://creativelang-97156.app.xervo.io/images/favicon.ico" class="js-favicon"> -->
+    <link rel="icon" href="./static/favicon_small.ico" class="js-favicon">
+    <link rel="icon" href="./static/logo-meta.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
     <div id="app">
       <!-- <router-view></router-view> -->
     </div>
-    <!-- built files will be auto injected -->
-    <!-- <script>
-    function initMap() {
-      var hcm = {
-        lat: 10.806476,
-        lng: 106.682172
-      };
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: hcm,
-        zoom: 14,
-        scrollwheel: false,
-        styles: [{
-            "elementType": "geometry",
-            "stylers": [{
-              "color": "#212121"
-            }]
-          },
-          {
-            "elementType": "labels.icon",
-            "stylers": [{
-              "visibility": "off"
-            }]
-          },
-          {
-            "elementType": "labels.text.fill",
-            "stylers": [{
-              "color": "#757575"
-            }]
-          },
-          {
-            "elementType": "labels.text.stroke",
-            "stylers": [{
-              "color": "#212121"
-            }]
-          },
-          {
-            "featureType": "administrative",
-            "elementType": "geometry",
-            "stylers": [{
-              "color": "#757575"
-            }]
-          },
-          {
-            "featureType": "administrative.country",
-            "elementType": "labels.text.fill",
-            "stylers": [{
-              "color": "#9e9e9e"
-            }]
-          },
-          {
-            "featureType": "administrative.land_parcel",
-            "stylers": [{
-              "visibility": "off"
-            }]
-          },
-          {
-            "featureType": "administrative.locality",
-            "elementType": "labels.text.fill",
-            "stylers": [{
-              "color": "#bdbdbd"
-            }]
-          },
-          {
-            "featureType": "administrative.neighborhood",
-            "stylers": [{
-              "visibility": "off"
-            }]
-          },
-          {
-            "featureType": "poi",
-            "elementType": "labels.text.fill",
-            "stylers": [{
-              "color": "#757575"
-            }]
-          },
-          {
-            "featureType": "poi.park",
-            "elementType": "geometry",
-            "stylers": [{
-              "color": "#181818"
-            }]
-          },
-          {
-            "featureType": "poi.park",
-            "elementType": "labels.text.fill",
-            "stylers": [{
-              "color": "#616161"
-            }]
-          },
-          {
-            "featureType": "poi.park",
-            "elementType": "labels.text.stroke",
-            "stylers": [{
-              "color": "#1b1b1b"
-            }]
-          },
-          {
-            "featureType": "road",
-            "elementType": "geometry.fill",
-            "stylers": [{
-              "color": "#2c2c2c"
-            }]
-          },
-          {
-            "featureType": "road",
-            "elementType": "labels",
-            "stylers": [{
-              "visibility": "off"
-            }]
-          },
-          {
-            "featureType": "road",
-            "elementType": "labels.text.fill",
-            "stylers": [{
-              "color": "#8a8a8a"
-            }]
-          },
-          {
-            "featureType": "road.arterial",
-            "stylers": [{
-              "visibility": "off"
-            }]
-          },
-          {
-            "featureType": "road.arterial",
-            "elementType": "geometry",
-            "stylers": [{
-              "color": "#373737"
-            }]
-          },
-          {
-            "featureType": "road.highway",
-            "elementType": "geometry",
-            "stylers": [{
-              "color": "#3c3c3c"
-            }]
-          },
-          {
-            "featureType": "road.highway",
-            "elementType": "labels",
-            "stylers": [{
-              "visibility": "off"
-            }]
-          },
-          {
-            "featureType": "road.highway.controlled_access",
-            "elementType": "geometry",
-            "stylers": [{
-              "color": "#4e4e4e"
-            }]
-          },
-          {
-            "featureType": "road.local",
-            "stylers": [{
-              "visibility": "off"
-            }]
-          },
-          {
-            "featureType": "road.local",
-            "elementType": "labels.text.fill",
-            "stylers": [{
-              "color": "#616161"
-            }]
-          },
-          {
-            "featureType": "transit",
-            "elementType": "labels.text.fill",
-            "stylers": [{
-              "color": "#757575"
-            }]
-          },
-          {
-            "featureType": "water",
-            "elementType": "geometry",
-            "stylers": [{
-              "color": "#000000"
-            }]
-          },
-          {
-            "featureType": "water",
-            "elementType": "labels.text",
-            "stylers": [{
-              "visibility": "off"
-            }]
-          },
-          {
-            "featureType": "water",
-            "elementType": "labels.text.fill",
-            "stylers": [{
-              "color": "#3d3d3d"
-            }]
-          }
-        ]
-      });
-      var marker = new google.maps.Marker({
-        position: hcm,
-        label: 'C',
-        map: map,
-        animation: google.maps.Animation.DROP
-      });
-    };
-    </script> -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-96984509-1', 'creativelang.com');
+      ga('send', 'pageview');
+    </script>
     <!-- <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7xdtyOIZ7m0oC1d7lp3rXnJ7O_AU_pJU&callback=initMap">
     </script> -->
