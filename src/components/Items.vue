@@ -81,7 +81,7 @@ export default {
     //   }, delay)
     // },
     loadBookmarks: function () {
-      var api = 'http://creativelang-97156.app.xervo.io/bookmarks'
+      var api = 'https://nodejs-creativelang.herokuapp.com/bookmarks'
       // var api = 'http://localhost:3000/bookmarks'
       this.$http.get(api).then((res) => {
         this.bookmarks = res.body

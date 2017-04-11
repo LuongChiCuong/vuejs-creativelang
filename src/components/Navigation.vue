@@ -60,11 +60,11 @@
       </div>
       <div v-if="activeFinder" class="container search-container">
         <div class="row search-row">
-          <div class="offset-m2 col m8">
+          <div class="offset-m2 col m8 s10">
             <input placeholder="Search ..." v-model="searchValue" v-on:keyup.enter="goFinder(searchValue)"
               data-length="100" type="text" autofocus>
           </div>
-          <div class="col m2 search-button">
+          <div class="col m2 s2 search-button">
             <i class="medium material-icons" v-on:click="goFinder(searchValue)">search</i>
           </div>
         </div>
@@ -118,6 +118,9 @@ export default {
       z-index: 22;
       font-family: Orbitron;
       font-size: 2.5rem;
+      @media only screen and (max-width: 480px) {
+          font-size: 2rem;
+      }
     }
     .brand-logo.active{
       color: #64ffda !important;
@@ -340,7 +343,6 @@ export default {
       }
     }
     .search-container {
-
       margin-top: 100px;
       .search-row {
         margin-bottom: 5px;
