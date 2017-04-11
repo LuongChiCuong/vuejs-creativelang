@@ -86,7 +86,9 @@ export default {
           color: white;
           letter-spacing: 4px;
           line-height: 23px;
-          margin: auto 10px;
+          @media only screen and (max-width: 480px) {
+              margin: auto 10px;
+          }
         }
         a.btn-explore {
           display: inline-block;
