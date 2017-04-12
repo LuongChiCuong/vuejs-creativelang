@@ -2,23 +2,45 @@
   <footer class="skills left-align grey darken-4">
       <div class="skills-content container">
           <div class="row">
-              <div class="footer-column col m4 white-text">
+              <div class="footer-column col m4 s12 white-text">
                   <h4>Site Map</h4>
+                  <ul>
+                    <li>
+                      <router-link class="link-item" :to="{ name: 'app'}">Home
+                      </router-link>
+                    </li>
+                    <li>
+                      <router-link class="link-item" :to="{ name: 'list'}">Bookmarks
+                      </router-link>
+                    </li>
+                    <li>
+                      <router-link class="link-item" :to="{ name: 'ebook'}">Ebooks
+                      </router-link>
+                    </li>
+                    <li>
+                      <router-link class="link-item" :to="{ name: 'about'}">About
+                      </router-link>
+                    </li>
+                    <li>
+                      <router-link class="link-item" :to="{ name: 'contact'}">Contact
+                      </router-link>
+                    </li>
+                  </ul>
               </div>
-              <div class="footer-column col m4 white-text">
+              <div class="footer-column col m4 s12 white-text">
                   <h4>Keep Working</h4>
                   <ul>
                       <li v-for="skill in workingSkills">
-                          <i class="small material-icons">done</i>
+                          <!-- <i class="small material-icons hide-on-small-only">done</i> -->
                           <span>{{skill.name}}</span>
                       </li>
                   </ul>
               </div>
-              <div class="footer-column col m4 white-text">
+              <div class="footer-column col m4 s12 white-text">
                   <h4>Still Learning</h4>
                   <ul>
                       <li v-for="skill in learningSkills">
-                          <i class="small material-icons">trending_up</i>
+                          <!-- <i class="small material-icons hide-on-small-only">trending_up</i> -->
                           <span>{{skill.name}}</span>
                       </li>
                   </ul>
@@ -61,48 +83,62 @@
   }
 </script>
 
-<style>
-  /*#map {
-    width: 100%;
-    height: 400px;
-    background-color: grey;
-  }*/
+<style lang="less">
+  @teal-color : #64ffda;
   .skills {
-      background: url('../assets/mountain.png') repeat-x;
-      opacity: 0.9;
+    background: url('../assets/mountain.png') repeat-x;
+    opacity: 0.9;
+    @media only screen and (max-width: 600px) {
+        background-size: cover;
+    }
+    h4 {
+        font-size: 1.5rem;
+    }
+    .skills-content {
+      min-height: 200px;
+      padding: 30px 0;
+      .footer-column ul {
+        @media only screen and (max-width: 600px) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        li {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          font-size: 1.2rem;
+          @media only screen and (max-width: 600px) {
+              margin-right: 10px;
+          }
+          a{
+            color: @teal-color;
+          }
+          // span {
+            // color: #64ffda;
+            // margin-left: 10px;
+          // }
+        }
+      }
+    }
   }
-  .skills h4 {
-      font-size: 1.5rem;
-  }
-  .skills .skills-content {
-    min-height: 200px;
-    padding: 30px 0;
-  }
-  .footer-column ul li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-  }
-  .footer-column ul li span{
-    margin-left: 10px;
-  }
-  .footer-column ul li a{
-    margin-left: 10px;
-  }
-    /* The animation code */
-  .made-by p{
-    margin: 0;
-    padding: 10px 0;
-  }
+
+  /* The animation code */
   @keyframes color-heart {
       from {color: #e53935 ;}
       to {color: #ff8a80;}
   }
-  .made-by b {
-    animation-name: color-heart;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
+
+  .made-by {
+    p {
+      margin: 0;
+      padding: 10px 5px;
+    }
+    b {
+      animation-name: color-heart;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+    }
   }
 
 </style>

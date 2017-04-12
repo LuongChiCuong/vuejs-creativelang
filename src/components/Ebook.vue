@@ -7,16 +7,20 @@
     <div class="ebook-section container">
       <div class="row">
         <h2 class="center-align">My Favorite Ebook</h2>
-        <h3 class="center-align">Because of the license, so I cannot open download URL for you.</h3>
+        <h3 class="center-align">Choose a book that is right for you then go along with it to reach your goal.</h3>
         <div class="underline center-align">
             <span>&nbsp;</span>
         </div>
       </div>
       <div class="row list-book">
         <ul>
-            <li class="col s12 m3 l2 book-content center-align" v-for="book in ebooks">
+            <li class="col s12 m3 l2 book-item center-align" v-for="book in ebooks">
+              <div class="book-info">
                 <img :src="require(`../assets/img/${book.img}`)" :alt="book.title" class="cover-book">
-                <b class="title">{{book.title}}</b>
+                <div class="info-section">
+                  <a :href="book.url" class="title" target="_blank">{{book.title}}</a>
+                </div>
+              </div>
             </li>
         </ul>
       </div>
@@ -55,16 +59,19 @@
 </script>
 
 <style lang="less" scoped>
+  @teal-color : #64ffda;
   .ebook-page {
     overflow: hidden;
   }
-
   .banner {
     height: 550px;
     width: 100%;
     margin-top: -30px;
     background: url('../assets/book-shelf-bg.jpg') center no-repeat;
     background-size:cover;
+    @media only screen and (max-width: 600px) {
+        height: 300px;
+    }
     .get-in-touch {
       font-size: 3rem;
       position: relative;
@@ -72,6 +79,13 @@
       transform: translateX(-50%);
       background: white;
       padding: 50px 70px;
+      @media only screen and (max-width: 600px) {
+        left: 0;
+        transform: translateX(0%);
+        width: 100%;
+        margin: 0 10px;
+        padding: 10px;
+      }
       &:after {
         content: '';
         position: absolute;
@@ -118,11 +132,52 @@
     }
     .list-book{
       margin: 25px 0;
-      .book-content {
-        min-height: 350px;
-        .cover-book {
-          width: 100%;
-          height: 250px;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        margin: 0;
+        .book-item {
+          min-height: 350px;
+          margin: 0;
+          @media only screen and (max-width: 600px) {
+              padding: 0;
+              margin: 0 0 30px 0;
+              min-height: auto;
+          }
+          .book-info {
+            .cover-book {
+              width: 100%;
+              height: 250px;
+              @media only screen and (max-width: 600px) {
+                  width: initial;
+              }
+            }
+            .info-section {
+              a {
+                font-size: 16px;
+                line-height: 18px;
+                font-weight: bold;
+                color: #333;
+                display: inline-block;
+                &:before {
+                  content: '';
+                  height: 2px;
+                  width: 0;
+                  background-color: @teal-color;
+                  display: block;
+                  position: relative;
+                  top: 10px;
+                }
+                &:hover {
+                  &:before {
+                    width: 100%;
+                    transition: width ease-in-out 0.5s;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
