@@ -3,7 +3,7 @@
     <div class="video-content">
       <div class="inner-content">
         <img src="../assets/logo-icon-new.png" alt="Creative Lang Icon"/>
-        <h2>Creative Lang</h2>
+        <h1>Creative Lang</h1>
         <p>
           Stop coding like a worker!
         </p>
@@ -67,7 +67,7 @@ export default {
         vertical-align: middle;
         text-align: center;
         font-family: Orbitron;
-        h2 {
+        h1 {
           max-width: 40em;
           font-size: 5rem;
           font-weight: 700;
