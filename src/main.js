@@ -13,6 +13,7 @@ Vue.use(VueRouter)
 Vue.use(Resource)
 
 const router = new VueRouter({
+  mode: 'history',
   routes: [
     { path: '/', name: 'app', component: App },
     { path: '/list', name: 'list', component: CompList },

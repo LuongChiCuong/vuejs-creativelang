@@ -22,7 +22,7 @@
               <!-- <a :href="bm.url" target="_blank">Open in new tab</a> -->
             </div>
           </li>
-        <transition-group>
+        </transition-group>
     </div>
   </div>
 </template>
