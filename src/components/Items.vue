@@ -7,20 +7,7 @@
             :key="bm"
             v-bind:data-index="index"
             class="col s12 m3 l2 item-content">
-            <div class="card-content">
-
-              <!-- <div class="card-icon">
-                <img :src="'https://www.google.com/s2/favicons?domain=' + bm.url" class="favicon">
-              </div> -->
-              <div class="title">
-                <img :src="'https://www.google.com/s2/favicons?domain=' + bm.url" v-bind:key="bm" class="favicon">
-                <a :href="bm.url"  target="_blank">{{ bm.title }}</a>
-              </div>
-              <tags :tagValue="bm.tags"></tags>
-              <p class="description">{{ bm.description }}</p>
-              <!-- <i class="url-text">{{ bm.url }}</i> -->
-              <!-- <a :href="bm.url" target="_blank">Open in new tab</a> -->
-            </div>
+            <bookmarkContent :bmValue="bm"></bookmarkContent>
           </li>
         </transition-group>
     </div>
@@ -28,14 +15,14 @@
 </template>
 
 <script>
-import Tags from './Tags'
+import BookmarkContent from './BookmarkContent'
 // var _ = require('lodash')
 // var Velocity = require('velocity-animate')
 
 export default {
   name: 'items',
   components: {
-    Tags
+    BookmarkContent
   },
   data () {
     return {
@@ -153,45 +140,4 @@ export default {
       height: 20px;
     }
   }
-  .card-content {
-    margin-right: 30px;
-    border-top: 1px solid #333;
-    .title {
-      margin-top: 1rem;
-      a {
-        margin-left: 5px;
-        font-size: 16px;
-        line-height: 18px;
-        font-weight: bold;
-        color: #333;
-        display: inline-block;
-        &:before {
-          content: '';
-          height: 2px;
-          width: 0;
-          background-color: @teal-color;
-          display: block;
-          position: relative;
-          top: 10px;
-        }
-        &:hover {
-          &:before {
-            width: 100%;
-            transition: width ease-in-out 0.5s;
-          }
-        }
-      }
-
-    }
-    .url-text {
-      width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .description {
-      // min-height: 100px;
-    }
-  }
-
 </style>

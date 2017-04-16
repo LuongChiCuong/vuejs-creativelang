@@ -20,7 +20,7 @@
     </div>
     <div class="filter"></div>
     <!-- <div class="mobile-background"></div> -->
-    <video autoplay controls="controls" loop class="fillWidth responsive-video" poster="https://nodejs-creativelang.herokuapp.com/images/browsing.jpg">
+    <video preload="true" autoplay loop muted playsinline class="fillWidth responsive-video" poster="https://nodejs-creativelang.herokuapp.com/images/browsing.jpg">
         <!-- <source src="http://localhost:3000/video/browsing.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
         <source src="http://localhost:3000/video/browsing.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser. -->
         <source src="https://nodejs-creativelang.herokuapp.com/video/browsing.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.

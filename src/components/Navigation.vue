@@ -126,6 +126,10 @@ export default {
       color: #64ffda !important;
       -webkit-transition: color 1s ease-in-out;
       transition: color 1s ease-in-out;
+      @media only screen and (max-width: 480px) {
+          height: 60px;
+          line-height: 60px;
+      }
     }
     /*menu: div contain hamburger icon*/
     .menu {
@@ -274,6 +278,9 @@ export default {
       font-size: 2.5rem;
       margin-bottom: 20px;
       margin-left: 100px;
+      @media only screen and (max-width: 480px) {
+          margin-left: 38px;
+      }
       a{
         color: white;
         -webkit-transition: color .3s;

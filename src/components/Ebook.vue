@@ -80,6 +80,7 @@
       background: white;
       padding: 50px 70px;
       @media only screen and (max-width: 600px) {
+        font-size: 2rem;
         left: 0;
         transform: translateX(0%);
         width: 100%;

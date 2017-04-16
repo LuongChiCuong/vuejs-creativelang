@@ -9,7 +9,7 @@
         </div>
       </div>
         <div class="filter"></div>
-        <video autoplay controls="controls" loop class="fillWidth responsive-video" poster="https://nodejs-creativelang.herokuapp.com/images/black-key.jpg">
+        <video preload="true" autoplay loop muted playsinline class="fillWidth responsive-video" poster="https://nodejs-creativelang.herokuapp.com/images/black-key.jpg">
             <!-- <source src="http://localhost:3000/video/black-key.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
             <source src="http://localhost:3000/video/black-key.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser. -->
             <source src="https://nodejs-creativelang.herokuapp.com/video/black-key.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
@@ -18,14 +18,24 @@
     </div>
     <div class="container center-align">
       <div class="row">
-        <div class="introduce-content col m8 offset-m2">
-          <h3>Who I am?</h3>
+        <div class="introduce-content col m10 s12 offset-m1">
+          <article>About This Website</article>
           <p>
-              My name is Cuong, with a special passion for <mark><b>Front End Developer</b></mark>.</br>
-              I created this website with the purpose of sharing my knowledge and passion for everyone.</br>
-              My target is to become a <mark><b>creative front end</b></mark>, why? Because I want to directly develop ideas with <mark>my creativity</mark>,
-              I do not want to be limited in thinking and only following the design and marketing teams.</br>
-              If you also like <mark>Front End</mark>, we will prove to the fucking developers who think FE is simple and easy that <mark><b>FE is an art</b></mark>.
+              This site is a collection of bookmark and free e-book about <mark><b>Front End Development</b></mark>
+              with the purpose of sharing my knowledge and passion for everyone.
+              <br/></br>
+              It has been designed and built by hand from the ground up.
+              It's handled through <b>VueJS</b>, <b>NodeJS</b> support API, database control by <b>MongoDB</b>
+              and all of things is compiled with <b>Webpack</b>.
+          </p>
+          <article>About My Self</article>
+          <p>
+              My name is Cuong, with a special passion for <mark><b>Front End Development</b></mark>.
+              Be a <mark><b>Creative Front End Developer</b></mark> is my target, why?
+              <br/><br/>
+              Because I want to directly develop ideas with my creativity,
+              I do not want to be limited in thinking and only following the design and marketing teams.
+              As a fan of <mark><b>Front End</b></mark>, I will prove to the fucking developers who think FE is simple and easy that <mark><b>FE is an art</b></mark>.
           </p>
           <div class="resume">
             <p>*For more information, please take a look at</p>
@@ -62,14 +72,23 @@
         transform: translate(-50%, -50%);
         width: 100%;
         text-align: center;
+        @media only screen and (max-width: 600px) {
+            top: 50%;
+        }
         .inner-content {
           font-family: Orbitron;
           h1{
             font-size: 2rem;
+            @media only screen and (max-width: 600px) {
+                font-size: 1rem;
+            }
           }
           h2{
             font-size: 2.5rem;
             letter-spacing: 5px;
+            @media only screen and (max-width: 600px) {
+                font-size: 1.5rem;
+            }
           }
         }
 
@@ -81,16 +100,20 @@
         width: auto;
         height: auto;
         z-index: -100;
-        background: url('../assets/black-key.jpg') no-repeat;
+        // background: url('../assets/black-key.jpg') no-repeat;
+        background-color: black;
         background-size: cover;
         transition: 1s opacity;
+        @media only screen and (max-width: 600px) {
+            height: 300px;
+        }
       }
     }
   }
 
   .introduce-content {
     margin-bottom: 120px;
-    h3{
+    article{
       font-size: 1.5rem;
       &:before {
         display: block;
@@ -98,7 +121,10 @@
         width: 3px;
         height: 9.6rem;
         background-color: rgba(149, 149, 149, 0.7);
-        margin: 0 auto 2rem;
+        margin: 1rem auto 1rem;
+      }
+      @media only screen and (max-width: 600px) {
+          font-size: 1rem;
       }
     }
     p {
@@ -106,10 +132,16 @@
       mark{
         background-color: #64ffda;
       }
+      @media only screen and (max-width: 600px) {
+          font-size: 1.2rem;
+      }
     }
     .resume {
       p {
         font-size: 1.5rem;
+        @media only screen and (max-width: 600px) {
+            font-size: 1rem;
+        }
       }
       a {
         display: inline-block;

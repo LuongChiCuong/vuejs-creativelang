@@ -28,7 +28,7 @@
                   </ul>
               </div>
               <div class="footer-column col m4 s12 white-text">
-                  <h4>Keep Working</h4>
+                  <h4>Do & Like</h4>
                   <ul>
                       <li v-for="skill in workingSkills">
                           <!-- <i class="small material-icons hide-on-small-only">done</i> -->
@@ -37,7 +37,7 @@
                   </ul>
               </div>
               <div class="footer-column col m4 s12 white-text">
-                  <h4>Still Learning</h4>
+                  <h4>Learn & Research</h4>
                   <ul>
                       <li v-for="skill in learningSkills">
                           <!-- <i class="small material-icons hide-on-small-only">trending_up</i> -->
@@ -58,17 +58,19 @@
     {name: 'HTML5', color: 'red-text text-darken-1'},
     {name: 'CSS3/Less/Sass', color: 'blue-text text-darken-1'},
     {name: 'Materialize CSS', color: 'red-text text-lighten-2'},
-    {name: 'Javascript', color: 'yellow-text text-lighten-1'},
+    // {name: 'Javascript', color: 'yellow-text text-lighten-1'},
     {name: 'AngularJS', color: 'red-text text-darken-3'},
-    {name: 'Jquery', color: 'blue-text text-lighten-1'},
-    {name: 'Ruby on Rails', color: 'red-text text-darken-3'},
-    {name: 'MySQL', color: 'blue-text'}
-  ]
-  let newSkill = [
     {name: 'VueJS', color: 'red-text text-darken-1'},
+    // {name: 'Jquery', color: 'blue-text text-lighten-1'},
     {name: 'NodeJS', color: 'blue-text text-darken-1'},
     {name: 'ExpressJS', color: 'red-text text-lighten-2'},
-    {name: 'MongoDB', color: 'yellow-text text-lighten-1'},
+    // {name: 'Ruby on Rails', color: 'red-text text-darken-3'},
+    // {name: 'MySQL', color: 'blue-text'},
+    {name: 'MongoDB', color: 'yellow-text text-lighten-1'}
+  ]
+  let newSkill = [
+    {name: 'Interaction Design', color: 'blue-text text-darken-1'},
+    {name: 'WebGL', color: 'blue-text text-darken-1'},
     {name: 'Pixi.js', color: 'red-text text-darken-3'},
     {name: 'Three.js', color: 'blue-text text-lighten-1'}
   ]

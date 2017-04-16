@@ -38,11 +38,17 @@ export default {
 </script>
 
 <style lang="less">
+  @teal-color : #64ffda;
   .bottom-nav {
     position: fixed;
     bottom: 0;
     color: white;
     height: 50px;
+    @media only screen and (max-width: 600px) {
+        max-width: 100%;
+        height: 60px;
+        overflow: auto;
+    }
     .bottom-tag-list {
       height: 100%;
       display: flex;
@@ -50,12 +56,35 @@ export default {
       justify-content: center;
       align-items: center;
       margin-top: 0;
+      @media only screen and (max-width: 600px) {
+          width: 600px;
+      }
       li {
         margin: 0 20px;
-        color: #64ffda;
+        color: @teal-color;
         cursor: pointer;
       }
     }
   }
-
+  // custom scroll bar CSS
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  &::-webkit-scrollbar:vertical {
+      width: 0;
+      height: 0;
+  }
+  &::-webkit-scrollbar:horizontal {
+      height: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+      // background-color: rgba(0, 0, 0, .5);
+      background-color: @teal-color;
+      border-radius: 5px;
+      // border: 2px solid #ffffff;
+  }
+  &::-webkit-scrollbar-track {
+      // border-radius: 10px;
+      background-color: black;
+  }
 </style>
