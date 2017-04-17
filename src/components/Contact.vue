@@ -7,7 +7,7 @@
     <div class="contact-section container">
       <div class="row">
         <div class="contact-content col m8">
-          <article>Keep In Touch</article>
+          <article>Contact Me</article>
           <ul>
             <li><b>Name:</b> Luong Chi Cuong</li>
             <li><b>Email:</b> luongchicuong93@gmail.com</li>
