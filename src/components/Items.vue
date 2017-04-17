@@ -6,7 +6,7 @@
           <li v-for="(bm, index) in filteredBookmarks(bookmarks)"
             :key="bm"
             v-bind:data-index="index"
-            class="col s12 m3 l2 item-content">
+            class="col s12 m3 l3 item-content">
             <bookmarkContent :bmValue="bm"></bookmarkContent>
           </li>
         </transition-group>

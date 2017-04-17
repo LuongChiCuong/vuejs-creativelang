@@ -16,7 +16,8 @@
         <ul>
             <li class="col s12 m3 l2 book-item center-align" v-for="book in ebooks">
               <div class="book-info">
-                <img :src="require(`../assets/img/${book.img}`)" :alt="book.title" class="cover-book">
+                <!-- <img :src="require(`../assets/img/${book.img}`)" :alt="book.title" class="cover-book"> -->
+                <img :src="'https://nodejs-creativelang.herokuapp.com/ebooks/' + book.img" :alt="book.title" class="cover-book">
                 <div class="info-section">
                   <a :href="book.url" class="title" target="_blank">{{book.title}}</a>
                 </div>
