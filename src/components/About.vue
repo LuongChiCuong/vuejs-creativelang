@@ -25,7 +25,7 @@
               with the purpose of sharing my knowledge and passion for everyone.
               <br/></br>
               It has been designed and built by hand from the ground up.
-              It's handled through <b>VueJS</b>, <b>NodeJS</b> support API, database control by <b>MongoDB</b>
+              It's handled through <b>VueJS</b>, <b>NodeJS</b> support API, database is controlled by <b>MongoDB</b>
               and all of things is compiled with <b>Webpack</b>.
           </p>
           <article>About My Self</article>

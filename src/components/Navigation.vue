@@ -5,7 +5,7 @@
         <div class="nav-wrapper white grey-text text-darken-4">
           <!-- <a href="#!" class="brand-logo center black-text" :class="{active: activeMenu}">{{logo}}</a> -->
           <router-link class="brand-logo center black-text" :to="{ name: 'app'}"
-            :class="{active: activeMenu}">
+            :class="{active: activeMenu, activeSearch: activeFinder}">
             Creative Lang
           </router-link>
           <!-- <div class="skew-bg"></div> -->
@@ -126,10 +126,14 @@ export default {
       color: #64ffda !important;
       -webkit-transition: color 1s ease-in-out;
       transition: color 1s ease-in-out;
+      position: fixed;
       @media only screen and (max-width: 480px) {
           height: 60px;
           line-height: 60px;
       }
+    }
+    .brand-logo.activeSearch {
+      position: fixed;
     }
     /*menu: div contain hamburger icon*/
     .menu {
@@ -224,6 +228,7 @@ export default {
     }
     /*change with of hamburger icon*/
     .menu.active {
+      position: fixed;
       .icon-hamburger {
         span {
           width: 100%;

@@ -162,20 +162,21 @@
                 font-weight: bold;
                 color: #333;
                 display: inline-block;
-                &:before {
-                  content: '';
-                  height: 2px;
-                  width: 0;
-                  background-color: @teal-color;
-                  display: block;
-                  position: relative;
-                  top: 10px;
-                }
+                // &:before {
+                //   content: '';
+                //   height: 2px;
+                //   width: 0;
+                //   background-color: @teal-color;
+                //   display: block;
+                //   position: relative;
+                //   top: 10px;
+                // }
                 &:hover {
-                  &:before {
-                    width: 100%;
-                    transition: width ease-in-out 0.5s;
-                  }
+                  text-decoration: line-through;
+                  // &:before {
+                  //   width: 100%;
+                  //   transition: width ease-in-out 0.5s;
+                  // }
                 }
               }
             }

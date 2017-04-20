@@ -94,6 +94,8 @@
         }
         .card-content {
           border: none;
+          overflow: hidden;
+          text-overflow: ellipsis;
           .card-icon {
             position: relative;
           }
