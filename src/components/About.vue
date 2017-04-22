@@ -39,7 +39,7 @@
           </p>
           <div class="resume">
             <p>*For more information, please take a look at</p>
-            <a href="https://1drv.ms/b/s!AsP4GkXBYgLKxkFvrzPiJh0Qp7yt" target="_blank">My Resume</a>
+            <a href="https://drive.google.com/open?id=0B6RjoVyOOjxyUzBIcWM3R2RxcGs" target="_blank">My Resume</a>
           </div>
         </div>
       </div>

@@ -109,7 +109,8 @@
               content: '';
               height: 2px;
               width: 0;
-              background-color: @teal-color;
+              // background-color: @teal-color;
+              background-color: black;
               display: block;
               position: relative;
               top: 10px;
