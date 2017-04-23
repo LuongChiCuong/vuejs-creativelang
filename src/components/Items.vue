@@ -1,6 +1,15 @@
 <template>
   <div class="url-container">
-    <p class="count-item">Viewing total {{bookmarks.length}} bookmarks</p>
+      <p class="count-item">Viewing total
+        <transition
+        v-bind:css="false"
+        v-on:before-enter="beforeEnterCount"
+        v-on:enter="enterCount"
+        v-on:leave="leaveCount">
+          <span>{{bookmarksLength}}</span>
+        </transition>
+        bookmarks
+      </p>
     <div class="row">
         <transition-group name="list" tag="ul" class="list-item">
           <li v-for="(bm, index) in filteredBookmarks(bookmarks)"
@@ -17,7 +26,7 @@
 <script>
 import BookmarkContent from './BookmarkContent'
 // var _ = require('lodash')
-// var Velocity = require('velocity-animate')
+var Velocity = require('velocity-animate')
 
 export default {
   name: 'items',
@@ -30,43 +39,41 @@ export default {
       filterText: 'All'
     }
   },
-  // computed: {
-  //   computedBookmarks: function () {
-  //     return this.bookmarks.filter(function (bm) {
-  //       for (var i = 0; i < bm.tags.length; i++) {
-  //         return bm.tags[i].name === 'HTML/CSS'
-  //       }
-  //     })
-  //   }
-  // },
+  computed: {
+    bookmarksLength: function () {
+      return this.filteredBookmarks(this.bookmarks).length
+    }
+  },
   created: function () {
     this.$parent.$on('changeTagName', this.filterBy)
   },
   methods: {
-    // beforeEnter: function (el) {
-    //   el.style.opacity = 0
-    //   // el.style.height = 0
-    // },
-    // enter: function (el, done) {
-    //   var delay = el.dataset.index * 150
-    //   setTimeout(function () {
-    //     Velocity(
-    //       el,
-    //       { opacity: 1 },
-    //       { complete: done }
-    //     )
-    //   }, delay)
-    // },
-    // leave: function (el, done) {
-    //   var delay = el.dataset.index * 150
-    //   setTimeout(function () {
-    //     Velocity(
-    //       el,
-    //       { opacity: 0, position: 'absolute', top: '0px' },
-    //       { complete: done }
-    //     )
-    //   }, delay)
-    // },
+    // Transition count bookmarks
+    beforeEnterCount: function (el) {
+      el.style.opacity = 0
+      // el.style.height = 0
+    },
+    enterCount: function (el, done) {
+      var delay = el.dataset.index * 1500
+      setTimeout(function () {
+        Velocity(
+          el,
+          { opacity: 1 },
+          { complete: done }
+        )
+      }, delay)
+    },
+    leaveCount: function (el, done) {
+      var delay = el.dataset.index * 1500
+      setTimeout(function () {
+        Velocity(
+          el,
+          { opacity: 0, position: 'absolute', top: '0px' },
+          { complete: done }
+        )
+      }, delay)
+    },
+    // init bookmarks list from database
     loadBookmarks: function () {
       var api = 'https://nodejs-creativelang.herokuapp.com/bookmarks'
       // var api = 'http://localhost:3000/bookmarks'
@@ -108,6 +115,12 @@ export default {
     padding: 0 20px 20px 20px;
     .count-item{
       margin: 30px 0 30px 10px;
+      .count-enter-active, .count-leave-active {
+        transition: opacity 1s;
+      }
+      .count-enter, .count-leave-to /* .fade-leave-active in <2.1.8 */ {
+        opacity: 0;
+      }
     }
     .list-item {
       display: -webkit-box;

@@ -18,7 +18,8 @@ var tagsData = [
   {name: 'AngularJS'},
   {name: 'VueJS'},
   {name: 'NodeJS'},
-  {name: 'Awwwards'}
+  {name: 'Awwwards'},
+  {name: 'UI/UX'}
 ]
 
 export default {
