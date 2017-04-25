@@ -63,7 +63,7 @@ export default {
       align-items: center;
       margin-top: 0;
       @media only screen and (max-width: 600px) {
-          width: 600px;
+          width: 700px;
           margin-bottom: 0;
       }
       li {

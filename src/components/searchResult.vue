@@ -4,7 +4,7 @@
       <p v-if="bookmarks.length == 0 && noResult && searchKey">Sorry I cannot find <b>{{searchKey}}</b> :(</p>
       <p v-if="bookmarks.length > 0 && searchKey">Showing results in: <b>{{searchKey}}</b></p>
       <p v-if="bookmarks.length == 0 && searchKey && !noResult">Please Press Enter or Search Icon to results in: <b>{{searchKey}}</b></p>
-      <div class="col m12">
+      <div class="result-container col m12">
         <ul>
           <li class="col m12 result-row" v-if="bookmarks.length > 0" v-for="bm in bookmarks">
             <div class="card-content">
@@ -86,44 +86,50 @@
       max-height: calc(100% - 5px);
       overflow-y: auto;
       overflow-x: hidden;
-      .result-row {
-        padding: 15px 0;
-        border-bottom: 1px solid darkgrey;
-        &:first-child {
-          padding-top: 0;
-        }
-        .card-content {
-          border: none;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          .card-icon {
-            position: relative;
+      width: 100%;
+      .result-container {
+        width: 100%;
+        .result-row {
+          padding: 15px 0;
+          border-bottom: 1px solid darkgrey;
+          min-width: 100%;
+          max-width: 100%;
+          &:first-child {
+            padding-top: 0;
           }
-          .card-title {
-            font-size: 16px;
-            line-height: 18px;
-            font-weight: bold;
-            color: #333;
-            display: inline-block;
-            &:before {
-              content: '';
-              height: 2px;
-              width: 0;
-              // background-color: @teal-color;
-              background-color: black;
-              display: block;
+          .card-content {
+            border: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            .card-icon {
               position: relative;
-              top: 10px;
             }
-            &:hover {
+            .card-title {
+              font-size: 16px;
+              line-height: 18px;
+              font-weight: bold;
+              color: #333;
+              display: inline-block;
               &:before {
-                width: 100%;
-                transition: width ease-in-out 0.5s;
+                content: '';
+                height: 2px;
+                width: 0;
+                // background-color: @teal-color;
+                background-color: black;
+                display: block;
+                position: relative;
+                top: 10px;
+              }
+              &:hover {
+                &:before {
+                  width: 100%;
+                  transition: width ease-in-out 0.5s;
+                }
               }
             }
-          }
-          .tag-list {
-            margin-bottom: 6px;
+            .tag-list {
+              margin-bottom: 6px;
+            }
           }
         }
       }

@@ -94,7 +94,7 @@ var webpackConfig = merge(baseWebpackConfig, {
 
         // Wait until a specific element is detected with
         // document.querySelector.
-        captureAfterElementExists: '#content',
+        captureAfterElementExists: '#app',
 
         // Wait until a number of milliseconds has passed after scripts
         // have been executed. It's important to note that this may

@@ -1,14 +1,6 @@
 <template>
   <div class="url-container">
-      <p class="count-item">Viewing total
-        <transition
-        v-bind:css="false"
-        v-on:before-enter="beforeEnterCount"
-        v-on:enter="enterCount"
-        v-on:leave="leaveCount">
-          <span>{{bookmarksLength}}</span>
-        </transition>
-        bookmarks
+      <p class="count-item">Viewing total {{bookmarksLength}} bookmarks
       </p>
     <div class="row">
         <transition-group name="list" tag="ul" class="list-item">
@@ -26,7 +18,7 @@
 <script>
 import BookmarkContent from './BookmarkContent'
 // var _ = require('lodash')
-var Velocity = require('velocity-animate')
+// var Velocity = require('velocity-animate')
 
 export default {
   name: 'items',
@@ -48,31 +40,31 @@ export default {
     this.$parent.$on('changeTagName', this.filterBy)
   },
   methods: {
-    // Transition count bookmarks
-    beforeEnterCount: function (el) {
-      el.style.opacity = 0
-      // el.style.height = 0
-    },
-    enterCount: function (el, done) {
-      var delay = el.dataset.index * 1500
-      setTimeout(function () {
-        Velocity(
-          el,
-          { opacity: 1 },
-          { complete: done }
-        )
-      }, delay)
-    },
-    leaveCount: function (el, done) {
-      var delay = el.dataset.index * 1500
-      setTimeout(function () {
-        Velocity(
-          el,
-          { opacity: 0, position: 'absolute', top: '0px' },
-          { complete: done }
-        )
-      }, delay)
-    },
+    // // Transition count bookmarks
+    // beforeEnterCount: function (el) {
+    //   el.style.opacity = 0
+    //   // el.style.height = 0
+    // },
+    // enterCount: function (el, done) {
+    //   var delay = el.dataset.index * 1500
+    //   setTimeout(function () {
+    //     Velocity(
+    //       el,
+    //       { opacity: 1 },
+    //       { complete: done }
+    //     )
+    //   }, delay)
+    // },
+    // leaveCount: function (el, done) {
+    //   var delay = el.dataset.index * 1500
+    //   setTimeout(function () {
+    //     Velocity(
+    //       el,
+    //       { opacity: 0, position: 'absolute', top: '0px' },
+    //       { complete: done }
+    //     )
+    //   }, delay)
+    // },
     // init bookmarks list from database
     loadBookmarks: function () {
       var api = 'https://nodejs-creativelang.herokuapp.com/bookmarks'
