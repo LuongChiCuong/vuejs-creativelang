@@ -65,6 +65,7 @@
     .video-bg-container {
       position: relative;
       margin-top: -80px;
+      z-index:  -1;
       .video-content {
         position: absolute;
         color: white;

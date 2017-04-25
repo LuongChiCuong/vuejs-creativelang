@@ -263,6 +263,7 @@ export default {
       width: 60px;
       margin-right: 15px;
       cursor: pointer;
+      z-index: 19;
     }
   }
 
