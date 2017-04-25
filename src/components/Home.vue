@@ -75,7 +75,7 @@ export default {
           font-family: Orbitron;
           line-height: 5rem;
           margin: 0 auto;
-          @media only screen and (max-width: 480px) {
+          @media only screen and (max-width: 600px) {
               font-size: 3rem;
           }
         }
@@ -86,7 +86,7 @@ export default {
           color: white;
           letter-spacing: 4px;
           line-height: 23px;
-          @media only screen and (max-width: 480px) {
+          @media only screen and (max-width: 600px) {
               margin: auto 10px;
           }
         }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <!-- <h1> {{subject}} </h1> -->
     <navigation></navigation>
     <items></items>

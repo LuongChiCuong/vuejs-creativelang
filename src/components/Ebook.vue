@@ -1,32 +1,34 @@
 <template>
-  <div class="ebook-page">
-    <navigation></navigation>
-    <div class="banner grey valign-wrapper">
-      <h1 class="get-in-touch center-align valign">Free IT Ebook</h1>
-    </div>
-    <div class="ebook-section container">
-      <div class="row">
-        <h2 class="center-align">My Favorite Ebook</h2>
-        <h3 class="center-align">Choose a book that is right for you then go along with it to reach your goal.</h3>
-        <div class="underline center-align">
-            <span>&nbsp;</span>
+  <div id="app">
+    <div class="ebook-page">
+      <navigation></navigation>
+      <div class="banner grey valign-wrapper">
+        <h1 class="get-in-touch center-align valign">Free IT Ebook</h1>
+      </div>
+      <div class="ebook-section container">
+        <div class="row">
+          <h2 class="center-align">My Favorite Ebook</h2>
+          <h3 class="center-align">Choose a book that is right for you then go along with it to reach your goal.</h3>
+          <div class="underline center-align">
+              <span>&nbsp;</span>
+          </div>
+        </div>
+        <div class="row list-book">
+          <ul>
+              <li class="col s12 m3 l2 book-item center-align" v-for="book in ebooks">
+                <div class="book-info">
+                  <!-- <img :src="require(`../assets/img/${book.img}`)" :alt="book.title" class="cover-book"> -->
+                  <img :src="'https://nodejs-creativelang.herokuapp.com/ebooks/' + book.img" :alt="book.title" class="cover-book">
+                  <div class="info-section">
+                    <a :href="book.url" class="title" target="_blank">{{book.title}}</a>
+                  </div>
+                </div>
+              </li>
+          </ul>
         </div>
       </div>
-      <div class="row list-book">
-        <ul>
-            <li class="col s12 m3 l2 book-item center-align" v-for="book in ebooks">
-              <div class="book-info">
-                <!-- <img :src="require(`../assets/img/${book.img}`)" :alt="book.title" class="cover-book"> -->
-                <img :src="'https://nodejs-creativelang.herokuapp.com/ebooks/' + book.img" :alt="book.title" class="cover-book">
-                <div class="info-section">
-                  <a :href="book.url" class="title" target="_blank">{{book.title}}</a>
-                </div>
-              </div>
-            </li>
-        </ul>
-      </div>
-    </div>
-    <FooterSection></FooterSection>
+      <FooterSection></FooterSection>
+  </div>
 </div>
 </template>
 <script>

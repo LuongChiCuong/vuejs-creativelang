@@ -1,39 +1,41 @@
 <template>
-  <div class="contact-page">
-    <navigation></navigation>
-    <div class="banner grey valign-wrapper">
-      <h1 class="get-in-touch center-align valign">GET IN TOUCH</h1>
-    </div>
-    <div class="contact-section container">
-      <div class="row">
-        <div class="contact-content col m8">
-          <article>Contact Me</article>
-          <ul>
-            <li><b>Name:</b> Luong Chi Cuong</li>
-            <li><b>Email:</b> luongchicuong93@gmail.com</li>
-            <li><b>Address:</b> Thich Quang Duc, Ward 5, Phu Nhuan District, Ho Chi Minh city</li>
-            <li><b>Nation:</b> Viet Nam
-            <li><b>Phone:</b>  (+84) 937 422 456</li>
-          </ul>
-          <article>Ask To Answer</article>
-          <ul>
-            <li><b>Facebook:</b> <a class="blue-text text-darken-1" href="https://www.facebook.com/creativelang" target="_blank"> Creative Lang </a></li>
-            <li><b>Quora:</b> <a class="red-text text-darken-1" href="https://www.quora.com/profile/Cuong-Luong-6" target="_blank"> https://www.quora.com/profile/Cuong-Luong-6 </a></li>
-          </ul>
-        </div>
-        <div class="contact-content col m4">
-          <img class="avatar" src="../assets/avatar.jpg" alt="Cuong Luong"/>
+  <div id="app">
+    <div class="contact-page">
+      <navigation></navigation>
+      <div class="banner grey valign-wrapper">
+        <h1 class="get-in-touch center-align valign">GET IN TOUCH</h1>
+      </div>
+      <div class="contact-section container">
+        <div class="row">
+          <div class="contact-content col m8">
+            <article>Contact Me</article>
+            <ul>
+              <li><b>Name:</b> Luong Chi Cuong</li>
+              <li><b>Email:</b> luongchicuong93@gmail.com</li>
+              <li><b>Address:</b> Thich Quang Duc, Ward 5, Phu Nhuan District, Ho Chi Minh city</li>
+              <li><b>Nation:</b> Viet Nam
+              <li><b>Phone:</b>  (+84) 937 422 456</li>
+            </ul>
+            <article>Ask To Answer</article>
+            <ul>
+              <li><b>Facebook:</b> <a class="blue-text text-darken-1" href="https://www.facebook.com/creativelang" target="_blank"> Creative Lang </a></li>
+              <li><b>Quora:</b> <a class="red-text text-darken-1" href="https://www.quora.com/profile/Cuong-Luong-6" target="_blank"> https://www.quora.com/profile/Cuong-Luong-6 </a></li>
+            </ul>
+          </div>
+          <div class="contact-content col m4">
+            <img class="avatar" src="../assets/avatar.jpg" alt="Cuong Luong"/>
+          </div>
         </div>
       </div>
+      <!-- <div id="map">
+        <img src="../assets/map.png" alt="Google Map Capture" />
+      </div>
+      <div class="made-by center-align white">
+        <p>Made with <b class="heart">&#10084;</b> by luongchicuong93@gmail.com - Powered by VueJS - NodeJS - MongoDB</p>
+      </div> -->
+      <FooterSection></footerSection>
     </div>
-    <!-- <div id="map">
-      <img src="../assets/map.png" alt="Google Map Capture" />
-    </div>
-    <div class="made-by center-align white">
-      <p>Made with <b class="heart">&#10084;</b> by luongchicuong93@gmail.com - Powered by VueJS - NodeJS - MongoDB</p>
-    </div> -->
-    <FooterSection></footerSection>
-</div>
+  </div>
 </template>
 <script>
   import Navigation from './Navigation'

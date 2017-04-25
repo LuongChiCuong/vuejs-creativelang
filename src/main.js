@@ -23,11 +23,11 @@ const router = new VueRouter({
   ]
 })
 /* eslint-disable no-new */
-new Vue({
+var root = new Vue({
   el: '#app',
   router: router,
   template: '<router-view></router-view>'
 })
-// document.addEventListener('DOMContentLoaded', function () {
-//   root.$mount('#app')
-// })
+document.addEventListener('DOMContentLoaded', function () {
+  root.$mount('#app')
+})
