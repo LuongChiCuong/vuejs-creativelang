@@ -8,6 +8,7 @@ import CompList from './components/List'
 import CompEbook from './components/Ebook'
 import CompAbout from './components/About'
 import CompContact from './components/Contact'
+import CompCountDown from './components/CountDown'
 
 Vue.use(VueRouter)
 Vue.use(Resource)
@@ -19,7 +20,8 @@ const router = new VueRouter({
     { path: '/list', name: 'list', component: CompList },
     { path: '/ebook', name: 'ebook', component: CompEbook },
     { path: '/about', name: 'about', component: CompAbout },
-    { path: '/contact', name: 'contact', component: CompContact }
+    { path: '/contact', name: 'contact', component: CompContact },
+    { path: '/countdown', name: 'countdown', component: CompCountDown }
   ]
 })
 /* eslint-disable no-new */
