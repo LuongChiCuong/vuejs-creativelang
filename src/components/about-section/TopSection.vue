@@ -23,10 +23,10 @@
     top: 10px;
     color: white;
     width: 100%;
-    text-align: left;
+    text-align: right;
     .back-txt{
       opacity: 0.7;
-      margin-left: 10px;
+      margin-right: 10px;
       cursor: pointer;
     }
   }

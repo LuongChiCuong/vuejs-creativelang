@@ -3,24 +3,24 @@
     <div id="about-page">
       <TopSection></TopSection>
       <!-- Section 1: Greeting -->
-      <section id="s1" class="about-section">
+      <section data-index="1" class="about-section active">
         <TrianglifySection></TrianglifySection>
         <GreetingSection></GreetingSection>
       </section>
       <!-- Section 2: About my self -->
-      <section id="s2" class="about-section">
+      <section data-index="2" class="about-section">
         <IntroductionSection></IntroductionSection>
       </section>
       <!-- Section 3: Skills -->
-      <section id="s3" class="about-section">
+      <section data-index="3" class="about-section">
         <SkillSection></SkillSection>
       </section>
       <!-- Section 4: Working experiences -->
-      <section id="s4" class="about-section">
+      <section data-index="4" class="about-section">
         <ExpSection></ExpSection>
       </section>
       <!-- Section 5: Goals -->
-      <section id="s5" class="about-section">
+      <section data-index="5" class="about-section">
         <TargetSection></TargetSection>
       </section>
       <!-- End section -->
@@ -28,8 +28,8 @@
       <section class="control">
         <!-- <button v-on:click="goBack">Prev</button>
         <button v-on:click="goNext">Next</button> -->
-        <span v-on:click="goBack">Prev</span>
-        <span v-on:click="goNext">Next</span>
+        <span v-on:click="goBack" v-show="counter > 1">Prev</span>
+        <span v-on:click="goNext" v-show="counter < 5">Next</span>
       </section>
     </div>
   </div>
@@ -50,7 +50,8 @@
     },
     data () {
       return {
-        counter: 1
+        counter: 1,
+        currentIndex: 1
       }
     },
     methods: {
