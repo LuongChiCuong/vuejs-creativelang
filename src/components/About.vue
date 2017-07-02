@@ -35,6 +35,9 @@
   </div>
 </template>
 <script>
+  var Velocity = require('velocity-animate')
+  var $ = require('jQuery')
+  // import components
   import TopSection from './about-section/TopSection'
   import TrianglifySection from './about-section/Trianglify'
   import GreetingSection from './about-section/Greeting'
@@ -51,19 +54,30 @@
     data () {
       return {
         counter: 1,
-        currentIndex: 1
+        currentIndex: 1,
+        topValue: 100
       }
     },
     methods: {
       goBack: function (event) {
         if (this.counter === 1) return
         this.counter -= 1
-        console.log(this.counter)
       },
       goNext: function (event) {
         if (this.counter === 5) return
         this.counter += 1
-        console.log(this.counter)
+        // var el = $('.about-section').find('.active')
+        var el = $('.about-section.active')
+        var index = parseInt(el.attr('data-index'))
+        console.log(index)
+        if (index < this.counter) {
+          var moveTop = (index * this.topValue * -1) + '%'
+          console.log(moveTop)
+        }
+        Velocity(el, {top: moveTop}, [ 0.17, 0.67, 0.83, 0.67 ])
+        el.removeClass('active')
+        $($('.about-section')[this.counter - 1]).addClass('active')
+        Velocity($('.about-section.active'), {top: 0}, [ 0.17, 0.67, 0.83, 0.67 ])
       }
     }
   }
@@ -75,10 +89,15 @@
     overflow: hidden;
     position: relative;
     height: 100%;
+    transition: all 1s ease-in-out;
     .about-section {
       position: absolute;
       height: 100vh;
       width: 100%;
+      &.active{
+        // top: 0 !important;
+        // background-: teal !important;
+      }
       .section-container {
         height: 100vh;
         width: 100%;
@@ -87,16 +106,16 @@
         z-index: 5;
       }
       &:nth-of-type(2) {
-        transform: translateY(100%);
+        top: 100%;
     	}
       &:nth-of-type(3) {
-        transform: translateY(200%);
+        top: 200%;
     	}
       &:nth-of-type(4) {
-        transform: translateY(300%);
+        top: 300%;
     	}
       &:nth-of-type(5) {
-        transform: translateY(400%);
+        top: 400%;
     	}
     }
     .control {
@@ -105,6 +124,7 @@
       top: 50%;
       color: black;
       z-index: 10;
+      cursor: pointer;
     }
   }
 </style>
