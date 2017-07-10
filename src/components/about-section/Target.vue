@@ -1,6 +1,6 @@
 <template>
     <div class="section-container">
-      <h1>Working as a Front End Developer.</h1>
+      <h1>Target</h1>
     </div>
 </template>
 <script>

@@ -1,6 +1,6 @@
 <template>
     <div class="section-container">
-      <h1>HTML/CSS/JS/.....</h1>
+      <h1>Skills</h1>
     </div>
 </template>
 <script>

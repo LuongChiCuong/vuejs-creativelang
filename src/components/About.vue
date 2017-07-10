@@ -28,8 +28,8 @@
       <section class="control">
         <!-- <button v-on:click="goBack">Prev</button>
         <button v-on:click="goNext">Next</button> -->
-        <span v-on:click="goBack" v-show="counter > 1">Prev</span>
-        <span v-on:click="goNext" v-show="counter < 5">Next</span>
+        <span v-on:click="clickOnBack" v-show="counter > 1">Prev</span>
+        <span v-on:click="clickOnNext" v-show="counter < 5">Next</span>
       </section>
     </div>
   </div>
@@ -59,25 +59,43 @@
       }
     },
     methods: {
-      goBack: function (event) {
+      clickOnBack: function (event) {
         if (this.counter === 1) return
         this.counter -= 1
+        var activeElement = this.findActiveElement()
+        this.moveActiveSection(activeElement, this.counter)
+        this.setActiveSection(this.counter)
       },
-      goNext: function (event) {
+      clickOnNext: function (event) {
         if (this.counter === 5) return
         this.counter += 1
-        // var el = $('.about-section').find('.active')
-        var el = $('.about-section.active')
+        var activeElement = this.findActiveElement()
+        this.moveActiveSection(activeElement, this.counter)
+        this.setActiveSection(this.counter)
+      },
+      findActiveElement: function () {
+        return $('.about-section.active')
+      },
+      moveActiveSection: function (el, counter) {
+        var moveTopValue = 0
         var index = parseInt(el.attr('data-index'))
-        console.log(index)
-        if (index < this.counter) {
-          var moveTop = (index * this.topValue * -1) + '%'
-          console.log(moveTop)
+        if (index < counter) {
+          moveTopValue = (index * this.topValue * -1) + '%'
+        } else if (index > counter) {
+          moveTopValue = ((index - 1) * this.topValue) + '%'
         }
-        Velocity(el, {top: moveTop}, [ 0.17, 0.67, 0.83, 0.67 ])
+        // Velocity(el, {top: moveTopValue}, [8])
+        Velocity(el, {scale: '80%'}, 500)
+        Velocity(el, {top: moveTopValue}, 1000, [ 0.17, 0.67, 0.83, 0.67 ])
+        Velocity(el, {scale: 1}, 500)
         el.removeClass('active')
-        $($('.about-section')[this.counter - 1]).addClass('active')
-        Velocity($('.about-section.active'), {top: 0}, [ 0.17, 0.67, 0.83, 0.67 ])
+      },
+      setActiveSection: function (counter) {
+        $($('.about-section')[counter - 1]).addClass('active')
+        // Velocity('.about-section.active', {top: 0}, [8])
+        Velocity($('.about-section.active'), {scale: '80%'}, 500)
+        Velocity($('.about-section.active'), {top: 0}, 1000, [ 0.17, 0.67, 0.83, 0.67 ])
+        Velocity($('.about-section.active'), {scale: 1}, 500)
       }
     }
   }
@@ -89,7 +107,8 @@
     overflow: hidden;
     position: relative;
     height: 100%;
-    transition: all 1s ease-in-out;
+    // transition: all 1s ease-in-out;
+    background-color: #001a00;
     .about-section {
       position: absolute;
       height: 100vh;

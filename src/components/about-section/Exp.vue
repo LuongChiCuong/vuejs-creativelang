@@ -1,6 +1,6 @@
 <template>
     <div class="section-container">
-      <h1>2+ years Experience about Web Development.</h1>
+      <h1>Exp.</h1>
     </div>
 </template>
 <script>
@@ -9,5 +9,5 @@
   }
 </script>
 <style lang="less" scoped>
-  
+
 </style>
