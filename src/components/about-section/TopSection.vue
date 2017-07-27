@@ -21,11 +21,10 @@
     z-index: 9;
     position: fixed;
     top: 10px;
-    color: white;
     width: 100%;
     text-align: right;
     .back-txt{
-      opacity: 0.7;
+      // opacity: 0.7;
       margin-right: 10px;
       cursor: pointer;
     }

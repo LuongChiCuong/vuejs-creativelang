@@ -5,11 +5,11 @@
 <script>
   var Trianglify = require('trianglify')
   var pattern = Trianglify({
-    cell_size: 50,
+    cell_size: 100,
     variance: '0.88',
     seed: '3onhz',
-    // x_colors: 'BuGn',
-    x_colors: ['#1a1a1a', '#4d4d4d', '#878787', '#bababa', '#e0e0e0', '#ffffff', '#c7eae5', '#80cdc1', '#35978f', '#01665e', '003c30'],
+    x_colors: 'YlGnBu',
+    // x_colors: ['#1a1a1a', '#4d4d4d', '#878787', '#bababa', '#e0e0e0', '#ffffff', '#c7eae5', '#80cdc1', '#35978f', '#01665e', '003c30'],
     y_colors: 'match_x',
     palette: Trianglify.colorbrewer,
     color_space: 'lab',

@@ -14,8 +14,8 @@
 <style lang="less" scoped>
   .greeting {
     position: absolute;
-    background: black;
-    opacity: 0.4;
+    // background: white;
+    // opacity: 0.4;
     width: 100%;
     height: 100%;
     top: 0;
@@ -27,7 +27,6 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: white;
       text-align: center;
       h1 {
         font-size: 2.5rem;

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="about-page">
+    <div id="about-page" v-on:wheel="handleMouseWheel">
       <TopSection></TopSection>
       <!-- Section 1: Greeting -->
       <section data-index="1" class="about-section active">
@@ -28,15 +28,20 @@
       <section class="control">
         <!-- <button v-on:click="goBack">Prev</button>
         <button v-on:click="goNext">Next</button> -->
-        <span v-on:click="clickOnBack" v-show="counter > 1">Prev</span>
-        <span v-on:click="clickOnNext" v-show="counter < 5">Next</span>
+        <span v-on:click="clickOnBack" class="arrow-up" v-bind:class="{ hidden: counter <= 1}">
+          <i class="material-icons" title="Go to previous Section">keyboard_arrow_up</i>
+        </span>
+        <span v-on:click="clickOnNext" class="arrow-down" v-bind:class="{ hidden: counter >= 5}">
+          <i class="material-icons" title="Go to next Section">keyboard_arrow_down</i>
+        </span>
       </section>
     </div>
   </div>
 </template>
 <script>
-  var Velocity = require('velocity-animate')
-  var $ = require('jQuery')
+  const Velocity = require('velocity-animate')
+  const $ = require('jQuery')
+  const _ = require('lodash')
   // import components
   import TopSection from './about-section/TopSection'
   import TrianglifySection from './about-section/Trianglify'
@@ -55,7 +60,8 @@
       return {
         counter: 1,
         currentIndex: 1,
-        topValue: 100
+        topValue: 100,
+        scrolled: false
       }
     },
     methods: {
@@ -65,6 +71,7 @@
         var activeElement = this.findActiveElement()
         this.moveActiveSection(activeElement, this.counter)
         this.setActiveSection(this.counter)
+        this.animateControl()
       },
       clickOnNext: function (event) {
         if (this.counter === 5) return
@@ -72,6 +79,7 @@
         var activeElement = this.findActiveElement()
         this.moveActiveSection(activeElement, this.counter)
         this.setActiveSection(this.counter)
+        this.animateControl()
       },
       findActiveElement: function () {
         return $('.about-section.active')
@@ -85,18 +93,49 @@
           moveTopValue = ((index - 1) * this.topValue) + '%'
         }
         // Velocity(el, {top: moveTopValue}, [8])
-        Velocity(el, {scale: '80%'}, 500)
-        Velocity(el, {top: moveTopValue}, 1000, [ 0.17, 0.67, 0.83, 0.67 ])
-        Velocity(el, {scale: 1}, 500)
+        Velocity(el, {scale: 0.8}, 450)
+        Velocity(el, {top: moveTopValue}, 500, 'ease-in-out')
+        // cubic bezier style
+        // Velocity(el, {top: moveTopValue}, 1000, [ 0.17, 0.67, 0.83, 0.67 ])
+        Velocity(el, {scale: 1}, 450)
         el.removeClass('active')
       },
       setActiveSection: function (counter) {
         $($('.about-section')[counter - 1]).addClass('active')
         // Velocity('.about-section.active', {top: 0}, [8])
-        Velocity($('.about-section.active'), {scale: '80%'}, 500)
-        Velocity($('.about-section.active'), {top: 0}, 1000, [ 0.17, 0.67, 0.83, 0.67 ])
-        Velocity($('.about-section.active'), {scale: 1}, 500)
-      }
+        Velocity($('.about-section.active'), {scale: 0.8}, 450)
+        // cubic bezier style
+        // Velocity($('.about-section.active'), {top: 0}, 1000, [ 0.17, 0.67, 0.83, 0.67 ])
+        Velocity($('.about-section.active'), {top: 0}, 500, 'ease-in-out')
+        Velocity($('.about-section.active'), {scale: 1}, 450)
+      },
+      animateControl: function () {
+        if (this.counter === 1) {
+          Velocity($('.arrow-down'), {marginTop: '+=15px'}, {loop: true, delay: 150})
+        } else if (this.counter === 5) {
+          Velocity($('.arrow-up'), {marginTop: '-=15px'}, {loop: true, delay: 150})
+        } else {
+          Velocity($('.arrow-down'), 'stop')
+          Velocity($('.arrow-down'), {marginTop: 0}, 150)
+          Velocity($('.arrow-up'), 'stop')
+          Velocity($('.arrow-up'), {marginTop: 0}, 150)
+        }
+      },
+      handleMouseWheel: _.debounce(function (event) {
+        if (event.detail > 0 || event.wheelDelta < 0) {
+          // alternative options for wheelData: wheelDeltaX & wheelDeltaY
+          // scroll down
+          this.clickOnNext()
+        } else {
+          // scroll up
+          this.clickOnBack()
+        }
+        // prevent page fom scrolling
+        return false
+      }, 500)
+    },
+    mounted: function () {
+      this.animateControl()
     }
   }
 </script>
@@ -108,7 +147,9 @@
     position: relative;
     height: 100%;
     // transition: all 1s ease-in-out;
-    background-color: #001a00;
+    // background-color: #001a00;
+    background-color: #263238;
+    color: #333;
     .about-section {
       position: absolute;
       height: 100vh;
@@ -140,10 +181,22 @@
     .control {
       position: fixed;
       left: 94%;
-      top: 50%;
-      color: black;
+      top: 44%;
+      color: inherit;
       z-index: 10;
       cursor: pointer;
+      width: 45px;
+      text-align: center;
+      .hidden {
+        visibility: hidden;
+      }
+      span {
+        display: block;
+        i {
+          font-size: 45px;
+          line-height: 45px;
+        }
+      }
     }
   }
 </style>
